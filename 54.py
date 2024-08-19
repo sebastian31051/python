@@ -1,22 +1,24 @@
 #Confeccionar una aplicación que permita ingresar un entero por teclado y al presionar un botón
 #muestre dicho valor elevado al cuadrado en una Label.
 import tkinter as tk
-class aplicacion:
+
+class Aplicacion:
     def __init__(self):
         self.ventana1=tk.Tk()
-        self.label1=tk.Label(self.ventana1,text="Ingrese un numero:")
-        self.label1.grid(column=0,row=0)
+        self.label1=tk.Label(self.ventana1,text="Ingrese un número:")
+        self.label1.grid(column=0, row=0)
         self.dato=tk.StringVar()
         self.entry1=tk.Entry(self.ventana1, width=10, textvariable=self.dato)
-        self.entry1.grid(column=0,row=1)
-        self.boton1=tk.Button(self.ventana1,text="Calcular cuadrado", command=self.calcularcuadrado)
-        self.boton1.grid(column=0,row=2)
-        self.label2=tk.Label(self.ventana1,text="Resultado")
-        self.label2.grid(column=0,row=3)
+        self.entry1.grid(column=0, row=1)
+        self.boton1=tk.Button(self.ventana1, text="Calcular Cuadrado", command=self.calcularcuadrado)
+        self.boton1.grid(column=0, row=2)
+        self.label2=tk.Label(self.ventana1,text="resultado")
+        self.label2.grid(column=0, row=3)
         self.ventana1.mainloop()
-    
+
     def calcularcuadrado(self):
-        valor=int(input(self.dato.get()))
+        valor=int(self.dato.get())
         cuadrado=valor*valor
         self.label2.configure(text=cuadrado)
-aplicacion1=aplicacion()
+
+aplicacion1=Aplicacion()        
